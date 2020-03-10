@@ -11,5 +11,7 @@ namespace Senai.Senatur.WebApi.Interfaces
         List<TblUsuario> Listar();
 
         TblUsuario BuscarPorEmailSenha(string email, string senha);
+
+        //void BuscarPorEmailSenha(string email, string senha);
     }
 }

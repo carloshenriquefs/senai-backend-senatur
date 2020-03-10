@@ -31,8 +31,12 @@ namespace Senai.Senatur.WebApi.Controller
 
             if(usuarioBuscado == null)
             {
-                return NotFound("Email ou senha invalidos!");
+                return NotFound("Usuario não Cadastrado!");
             }
+            //if(usuarioBuscado.Senha != login.Senha && usuarioBuscado.Email != login.Email)
+            //{
+            //    return NotFound("Usuario ou senha invalidos!");
+            //} 
 
             return Ok();
 
