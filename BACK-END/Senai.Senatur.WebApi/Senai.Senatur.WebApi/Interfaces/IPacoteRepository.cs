@@ -15,5 +15,11 @@ namespace Senai.Senatur.WebApi.Interfaces
         void Cadastrar(TblPacote novoPacote);
 
         void Atualizar(int id, TblPacote pacoteAtualizado);
+
+        List<TblPacote> ListarPorAtivo(bool status);
+
+        List<TblPacote> ListarPorCidade(string cidade);
+
+        List<TblPacote> OrdenarPorPreco(string ordem);
     }
 }
