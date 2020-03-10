@@ -9,14 +9,33 @@ namespace Senai.Senatur.WebApi.Repository
 {
     public class UsuarioRepository : IUsuarioRepository
     {
-        public void BuscarPorEmailSenha(string email, string senha)
+        SenaturContext ctx = new SenaturContext();
+
+        public TblUsuario BuscarPorEmailSenha(string email, string senha)
         {
-            throw new NotImplementedException();
+            TblUsuario usuarioBuscado = ctx.TblUsuario.Find(email,senha);
+
+            if(usuarioBuscado.Senha == null && usuarioBuscado.Email == null)
+            {
+                return null;
+            }
+            else if(usuarioBuscado.Senha == senha && usuarioBuscado.Email == email)
+            {
+                
+            }
+
+            return usuarioBuscado;
         }
+
+        //public void BuscarPorEmailSenha(string email, string senha)
+        //{
+        //   return ctx.TblUsuario.FirstOrDefault(u => u.Email == email && u.Senha == senha );
+        //    
+        //}
 
         public List<TblUsuario> Listar()
         {
-            throw new NotImplementedException();
+            return ctx.TblUsuario.ToList();
         }
     }
 

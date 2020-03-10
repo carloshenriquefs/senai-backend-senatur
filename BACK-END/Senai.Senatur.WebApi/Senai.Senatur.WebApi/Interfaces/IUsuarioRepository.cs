@@ -10,6 +10,6 @@ namespace Senai.Senatur.WebApi.Interfaces
     {
         List<TblUsuario> Listar();
 
-        void BuscarPorEmailSenha(string email, string senha);
+        TblUsuario BuscarPorEmailSenha(string email, string senha);
     }
 }
