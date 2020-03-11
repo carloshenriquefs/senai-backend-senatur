@@ -25,7 +25,7 @@ namespace Senai.Senatur.WebApi.Domains
         public decimal Valor { get; set; }
 
         [Required(ErrorMessage = "O Ativo é obrigatório!")]
-        public byte[] Ativo { get; set; }
+        public bool Ativo { get; set; }
 
         [Required(ErrorMessage = "O nome da cidade é obrigatório!")]
         public string NomeCidade { get; set; }

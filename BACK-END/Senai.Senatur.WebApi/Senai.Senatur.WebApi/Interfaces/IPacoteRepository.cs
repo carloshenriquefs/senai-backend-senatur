@@ -16,7 +16,7 @@ namespace Senai.Senatur.WebApi.Interfaces
 
         void Atualizar(int id, TblPacote pacoteAtualizado);
 
-        //List<TblPacote> ListarPorAtivo(bool status);
+        List<TblPacote> ListarPorAtivo(bool status);
 
         List<TblPacote> ListarPorCidade(string cidade);
 

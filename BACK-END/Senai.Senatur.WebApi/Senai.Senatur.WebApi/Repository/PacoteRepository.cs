@@ -45,10 +45,10 @@ namespace Senai.Senatur.WebApi.Repository
             return ctx.TblPacote.ToList();
         }
 
-        //public List<TblPacote> ListarPorAtivo(bool status)
-        // {
-        //    return ctx.TblPacote.ToList().FindAll(p => p.Ativo == status);
-        //}
+        public List<TblPacote> ListarPorAtivo(bool status)
+         {
+            return ctx.TblPacote.ToList().FindAll(p => p.Ativo == status);
+        }
 
         public List<TblPacote> ListarPorCidade(string cidade)
         {

@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using Microsoft.OpenApi.Models;
+using System.Reflection;
+using System.IO;
 
 namespace Senai.Senatur.WebApi
 {
@@ -65,10 +67,10 @@ namespace Senai.Senatur.WebApi
                         ClockSkew = TimeSpan.FromMinutes(30),
 
                         // Nome da issuer, de onde está vindo
-                        ValidIssuer = "Senatur.WebApi",
+                        ValidIssuer = "Senai.Senatur.WebApi",
 
                         // Nome da audience, de onde está vindo
-                        ValidAudience = "Senatur.WebApi"
+                        ValidAudience = "Senai.Senatur.WebApi"
                     };
                 });
 
@@ -92,14 +94,17 @@ namespace Senai.Senatur.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseMvc();
+
             app.UseSwagger();
 
-            app.UseSwagger(c =>
+            app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Senai.Senatur.WebApi");
             });
 
-            app.UseMvc();
+            app.UseAuthentication();
+            
         }
     }
 }

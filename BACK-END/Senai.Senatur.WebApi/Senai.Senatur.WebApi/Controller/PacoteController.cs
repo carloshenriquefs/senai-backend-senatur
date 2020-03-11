@@ -54,11 +54,11 @@ namespace Senai.Senatur.WebApi.Controller
             return StatusCode(204);
         }
 
-        //[HttpGet("Status/{status}")]
-        //public IActionResult GetByActive(bool status)
-        //{
-        //    return Ok(_pacoteRepository.ListarPorAtivo(status));
-        //}
+        [HttpGet("Status/{status}")]
+        public IActionResult GetByActive(bool status)
+        {
+            return Ok(_pacoteRepository.ListarPorAtivo(status));
+        }
 
         [HttpGet("Cidade/{cidade}")]
         public IActionResult GetByCity(string cidade)
