@@ -67,10 +67,10 @@ namespace Senai.Senatur.WebApi
                         ClockSkew = TimeSpan.FromMinutes(30),
 
                         // Nome da issuer, de onde está vindo
-                        ValidIssuer = "Senai.Senatur.WebApi",
+                        ValidIssuer = "Senatur.WebApi",
 
                         // Nome da audience, de onde está vindo
-                        ValidAudience = "Senai.Senatur.WebApi"
+                        ValidAudience = "Senatur.WebApi"
                     };
                 });
 
@@ -94,16 +94,16 @@ namespace Senai.Senatur.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
-
             app.UseSwagger();
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Senai.Senatur.WebApi");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Senatur.WebApi");
             });
 
             app.UseAuthentication();
+
+            app.UseMvc();
             
         }
     }

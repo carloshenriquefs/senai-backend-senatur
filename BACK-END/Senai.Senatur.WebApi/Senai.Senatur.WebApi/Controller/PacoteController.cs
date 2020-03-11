@@ -27,7 +27,7 @@ namespace Senai.Senatur.WebApi.Controller
         /// Metodo para Listar Pacotes
         /// </summary>
         /// <returns></returns>
-        [Authorize]
+        
         [HttpGet]
         public IActionResult Get()
         {
