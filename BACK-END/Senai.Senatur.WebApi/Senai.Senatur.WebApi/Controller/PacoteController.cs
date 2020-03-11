@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Senatur.WebApi.Domains;
@@ -22,6 +23,7 @@ namespace Senai.Senatur.WebApi.Controller
             _pacoteRepository = new PacoteRepository();
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult Get()
         {
@@ -34,6 +36,7 @@ namespace Senai.Senatur.WebApi.Controller
             return Ok(_pacoteRepository.BuscarPorId(id));
         }
 
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Post(TblPacote novoPacote)
         {
@@ -42,6 +45,7 @@ namespace Senai.Senatur.WebApi.Controller
             return StatusCode(201);
         }
 
+        [Authorize(Roles = "1")]
         [HttpPut("{id}")]
         public IActionResult Put(int id, TblPacote pacoteAtualizado)
         {

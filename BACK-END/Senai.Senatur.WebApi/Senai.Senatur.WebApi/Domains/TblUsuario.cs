@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Senai.Senatur.WebApi.Domains
 {
-    public partial class TblUsuario
+    public partial class TblUsuario 
     {
         public int IdUsuario { get; set; }
 

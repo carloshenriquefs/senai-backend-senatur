@@ -15,8 +15,9 @@ namespace Senai.Senatur.WebApi.Repository
 
         public TblUsuario BuscarPorEmailSenha(string email, string senha)
         {
-           return ctx.TblUsuario.FirstOrDefault(u => u.Email == email && u.Senha == senha );
+           TblUsuario usuarioBuscado =  ctx.TblUsuario.FirstOrDefault(u => u.Email == email && u.Senha == senha );
 
+            return usuarioBuscado;
         }
 
         public List<TblUsuario> Listar()

@@ -22,6 +22,7 @@ namespace Senai.Senatur.WebApi.Controller
             _usuarioRepository = new UsuarioRepository();
         }
 
+
         [HttpGet]
         public IActionResult Get()
         {
@@ -29,7 +30,7 @@ namespace Senai.Senatur.WebApi.Controller
         }
 
         [HttpGet("{email}")]
-        public IActionResult GetById(string email, string senha)
+        public IActionResult GetByPasswordEmail(string email, string senha)
         {
             return Ok(_usuarioRepository.BuscarPorEmailSenha(email, senha));
         }
