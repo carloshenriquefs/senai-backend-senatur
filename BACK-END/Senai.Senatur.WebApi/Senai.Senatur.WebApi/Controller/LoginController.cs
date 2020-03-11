@@ -21,12 +21,20 @@ namespace Senai.Senatur.WebApi.Controller
     {
         IUsuarioRepository _usuarioRepository { get; set; }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
     public LoginController()
     {
          _usuarioRepository = new UsuarioRepository();
     }
     
+        /// <summary>
+        /// Metodo para buscar Email e Senha
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="senha"></param>
+        /// <returns></returns>
     [HttpGet("{email}")]
     public IActionResult GetByPasswordEmail(string email, string senha)
     {
@@ -34,7 +42,11 @@ namespace Senai.Senatur.WebApi.Controller
     }
 
 
-        
+        /// <summary>
+        /// Metodo para Login 
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns></returns>
     [HttpPost]
     public IActionResult Post(LoginViewModel login)
         {

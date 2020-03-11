@@ -22,13 +22,22 @@ namespace Senai.Senatur.WebApi.Controller
             _usuarioRepository = new UsuarioRepository();
         }
 
-
+        /// <summary>
+        /// Metodo para Listar Usuarios
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
             return Ok(_usuarioRepository.Listar());
         }
 
+       /// <summary>
+       /// Metodo para buscar por email e senha de Usuarios
+       /// </summary>
+       /// <param name="email"></param>
+       /// <param name="senha"></param>
+       /// <returns></returns>
         [HttpGet("{email}")]
         public IActionResult GetByPasswordEmail(string email, string senha)
         {
