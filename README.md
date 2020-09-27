@@ -1,5 +1,4 @@
-## Senai-Backend-Senatur
-## Projeto Back-End
+## Senai-Backend-Senatur:
 
 ## Atividades Desenvolvidas
 
@@ -15,7 +14,7 @@
 #### DELETE - Deletar
 
 ## Planejamento
-#### TRELLO;
+#### TRELLO
 
 ## Colaboradores:
 #### Allan Mancilha
